@@ -13,7 +13,7 @@ class Cube extends Component {
     }
   }
   change(newValue) {
-    if (newValue == this.state.value)
+    if (newValue === this.state.value)
        return;
     var newFaces = this.state.faceValue;
     newFaces[(this.getFace() + 1) % 4] = newValue;
@@ -77,7 +77,11 @@ class CubeClock extends Component {
 
 class App extends Component {
   render() {
-    return <CubeClock />;
+    return (
+      <div>
+        <CubeClock />
+      </div>
+    );
   }
 }
 

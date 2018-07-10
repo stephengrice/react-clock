@@ -27,8 +27,8 @@ body {
 .cube {
   font-family: 'Roboto', sans-serif;
   display: inline-block;
-  width: 200px;
-  height: 200px;
+  width: 4em;
+  height: 4em;
   position: relative;
   transform-style: preserve-3d;
   transform: translateZ(-100px);
@@ -38,24 +38,42 @@ body {
   color: white;
   opacity: 0.9;
   position: absolute;
-  width: 200px;
-  height: 200px;
-  line-height: 200px;
+  width: 4em;
+  height: 4em;
+  line-height: 4em;
   text-align: center;
 }
 .face-front {
-  transform: rotateX(0deg) translateZ(100px);
+  transform: rotateX(0deg) translateZ(2em);
   background-color: #003249;
 }
 .face-top {
   background-color: #9AD1D4;
-  transform: rotateX(90deg) translateZ(100px);
+  transform: rotateX(90deg) translateZ(2em);
 }
 .face-back {
   background-color: #80CED7;
-  transform: rotateX(180deg) translateZ(100px);
+  transform: rotateX(180deg) translateZ(2em);
 }
 .face-bottom {
   background-color: #007EA7;
-  transform: rotateX(270deg) translateZ(100px);
+  transform: rotateX(270deg) translateZ(2em);
+}
+
+@media only screen and (max-width: 810px) {
+  body {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 275px) {
+  .clock {
+    flex-direction: column;
+  }
 }
