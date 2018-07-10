@@ -60,6 +60,27 @@ body {
   transform: rotateX(270deg) translateZ(2em);
 }
 
+#logo {
+  z-index: 99;
+  position: fixed;
+  left: 50%;
+  top: 1em;
+  transform: translate(-50%);
+}
+#logo img {
+  width: 1em;
+  height: 1em;
+}
+
+.phrase {
+  font-family: 'Gaegu', cursive;
+  position: fixed;
+  bottom: 15%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+}
+
 @media only screen and (max-width: 810px) {
   body {
     font-size: 2rem;

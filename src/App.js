@@ -75,11 +75,33 @@ class CubeClock extends Component {
   }
 }
 
+const phrases_morning = ['Nothing a cup o\' Joe won\'t fix', 'Smile - it\'s a new day', 'Good morning', 'Top o\' the morning'];
+const phrases_afternoon = ['Over halfway there!', 'Good afternoon'];
+const phrases_evening = ['The night is young','Sweet dreams', 'Good evening'];
+
+function PhraseMachine(props) {
+  let d = new Date();
+  let arr = null;
+  if (d.getHours() < 12) {
+    arr = phrases_morning;
+  } else {
+    arr = d.getHours() < 18 ? phrases_afternoon : phrases_evening;
+  }
+  let index = Math.floor(Math.random() * arr.length);
+  return (
+    <div class="phrase">
+    {arr[index]}
+    </div>
+  );
+}
+
 class App extends Component {
   render() {
     return (
       <div>
+        <div id="logo"><a href="http://www.pagekeysolutions.com/"><img src="logo.png" /></a></div>
         <CubeClock />
+        <PhraseMachine />
       </div>
     );
   }
